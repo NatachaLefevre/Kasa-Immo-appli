@@ -1,0 +1,43 @@
+.error {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 288px;
+        color: #ff6060;
+        margin: 80px auto;
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: 500;
+        color: #ff6060;
+    }
+
+    .retourAccueil {
+        font-size: 18px;
+        margin: 100px auto;
+        text-decoration: underline;
+    }
+}
+
+//   Version mobile //
+
+@media (max-width: 768px) {
+
+    .error {
+
+        h1 {
+            font-size: 96px;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        .retourAccueil {
+            font-size: 14px;
+        }
+    }
+}
