@@ -1,0 +1,32 @@
+footer {
+    width: 100%;
+    max-width: 1440px;
+    height: 209px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+    margin: 0 auto; // pour centrer le footer
+    display: flex; // pour le contenu intérieur en flex
+    flex-direction: column; // empiler les éléments
+    align-items: center; // centrer les éléments horizontalement
+
+    .footer-logo {
+        margin: 4rem 0 0.5rem;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+
+//   Version mobile //
+
+    @media (max-width: 768px) {
+        
+        p {
+            font-size: 12px;
+        }
+        }
+    
+}
