@@ -1,15 +1,22 @@
+#root {
+    position: relative; /* Pour que le footer absolu prenne toute la largeur de l'appli */
+}
+
 footer {
+    position: absolute;
     width: 100%;
     max-width: 1440px;
     height: 209px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: black;
     color: white;
-    text-align: center;
-    padding: 0 1rem;
-    margin: 0 auto; // pour centrer le footer
-    display: flex; // pour le contenu intérieur en flex
-    flex-direction: column; // empiler les éléments
-    align-items: center; // centrer les éléments horizontalement
+    text-align: center;     
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0 1rem;   
 
     .footer-logo {
         margin: 4rem 0 0.5rem;

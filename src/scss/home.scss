@@ -5,7 +5,7 @@
 #root {
     width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0 2rem 0 2rem;
 }
 
 .home {
@@ -99,6 +99,10 @@
 
     .home {
 
+        .gallery {
+            gap : 35px;
+        }
+
         .card {
             min-width: 335px;
             height: 255px;
@@ -128,6 +132,9 @@
             width: 335px;
             height: 111px;
             border-radius: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            box-shadow: none;
 
             .overlayTitle {
                 border-radius: 10px;
@@ -137,12 +144,14 @@
         .title>h2 {
             font-size: 1.4em;
             text-shadow: none;
-            padding: 50px;
+            padding: 20px;
         }
 
         .gallery {
             background-color: white;
+            gap: 20px;
             padding: 0;
+            margin-bottom: 20px;
         }
     }
 
