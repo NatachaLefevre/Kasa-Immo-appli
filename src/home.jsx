@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './scss/home.scss'
-import logements from './logements.json';
+import logements from '/logements.json';
 import backgroundImageTitle from './assets/images/background-image-home.jpg'
 import { Link } from 'react-router-dom';
 
