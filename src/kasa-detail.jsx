@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import PropertyDetailsModal from './PropertyDetailsModal';
 
 const KasaDetail = () => {
     const { id } = useParams();
     const [logement, setLogement] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate(); // Utilisation de useNavigate pour la redirection
 
     useEffect(() => {
         fetch(`/logements.json`)
@@ -16,13 +18,21 @@ const KasaDetail = () => {
             })
             .then(data => {
                 const trouvé = data.find(item => item.id === id);
-                setLogement(trouvé);
+                if (trouvé) {
+                    setLogement(trouvé);
+                } else {
+                    navigate("/error"); // Redirection vers la page d'erreur
+                }
+                setLoading(false); // Arrête le chargement après la recherche
             })
-            .catch(error => console.error('There was a problem with the fetch operation:', error));
-    }, [id]);
+            .catch(error => {
+                console.error('Cette page ne correspond à aucun logement', error);
+                setLoading(false); // Arrête le chargement en cas d'erreur
+            });
+    }, [id, navigate]);
 
-    if (!logement) {
-        return <div>Chargement...</div>;
+    if (loading) {
+        return <div>Chargement...</div>; // Affiche "Chargement..." tant que le fetch est en cours
     }
 
     return (
