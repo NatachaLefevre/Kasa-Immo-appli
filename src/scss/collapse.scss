@@ -35,20 +35,20 @@
 
 
 //   Version mobile //
-  
+
 @media (max-width: 768px) {
-    
+
     .collapse {
         width: 100%;
-        margin: 2em auto;
+        margin: 1em auto;
 
-  .collapse-title {
-    height: 30px;
-    font-size: 1em;
-  }
+        .collapse-title {
+            height: 30px;
+            font-size: 1em;
+        }
 
-  .collapse-content {
-    font-size: 0.8em;
-}
-}
+        .collapse-content {
+            font-size: 0.8em;
+        }
+    }
 }

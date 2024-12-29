@@ -1,44 +1,62 @@
 // Pour gérer l'affichage dynamique des logements dans la page d'accueil
 
 import React, { useState } from 'react';
+
 import './scss/home.scss';
 import Slideshow from './slideshow.jsx';
 import Collapse from './collapse.jsx';
-import './scss/page-logement.scss'
+import './scss/page-logement/PropertyDetailsModal.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const PropertyDetailsModal = ({ property }) => {
   return (
     <div className="modal">
+
+      {/* Carrousel d'images */}
       <Slideshow images={property.pictures} />
-      <h1>{property.title}</h1>
 
-      {/* Section pour la Localisation */}
-      <div className='lieu'><p>{property.location}</p></div>
+      <div className='info-property'>
 
-      {/* Section pour les Tags */}
-      <div className="tags">
-        {property.tags.map((tag, index) => (
-          <span key={index} className="tag">{tag}</span> // Afficher chaque tag
-        ))}
+      <div className='info-left'>
+
+        {/* Titre de la propriété */}
+        <h1>{property.title}</h1>
+
+        {/* Section pour la Localisation */}
+        <div className='lieu'><p>{property.location}</p></div>
+
+        {/* Section pour les Tags */}
+        <div className="tags">
+          {property.tags.map((tag, index) => (
+            <span key={index} className="tag">{tag}</span> // Afficher chaque tag
+          ))}
+        </div>
+
       </div>
 
-      {/* Informations sur l'hôte */}
-      <div className="host-info">
-        <p>{property.host.name}</p>
-        <img src={property.host.picture} alt={property.host.name} />
+      <div className='info-right'>
+
+        {/* Informations sur l'hôte */}
+        <div className="host-info">
+          <p>{property.host.name}</p>
+          <img src={property.host.picture} alt={property.host.name} />
+        </div>
+
+        {/* Note de la propriété */}
+        <div className="rating">
+          {Array.from({ length: 5 }, (_, index) => (
+            <span key={index} className={`star ${index < property.rating ? 'filled' : ''}`}>
+              <FontAwesomeIcon icon={faStar} />
+            </span>
+          ))}
+        </div>
 
       </div>
 
-      {/* Note de la propriété */}
-      <div className="rating">
-    {Array.from({ length: 5 }, (_, index) => (
-        <span key={index} className={`star ${index < property.rating ? 'filled' : ''}`}>
-            <FontAwesomeIcon icon={faStar} />
-        </span>
-    ))}
-</div>
+      </div>
+
+      <div className='info-collapses'>
 
       {/* Section pour la Description */}
       <Collapse title="Description">
@@ -53,6 +71,8 @@ const PropertyDetailsModal = ({ property }) => {
           ))}
         </ul>
       </Collapse>
+    </div>
+
     </div>
   );
 };

@@ -53,10 +53,10 @@
 
     .gallery {
         box-sizing: border-box;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         width: 100%;
-        justify-content: center;
+        // justify-content: center;
         background-color: #f6f6f6;
         gap: 55px;
         border-radius: 25px;
@@ -93,18 +93,20 @@
 
 }
 
-//   Version mobile //
+//   Version tablette //
 
-@media (max-width: 868px) {
+@media (max-width: 900px) {
 
     .home {
 
         .gallery {
+            grid-template-columns: repeat(2, 1fr);
             gap : 35px;
+            // padding: 0;
         }
 
         .card {
-            min-width: 335px;
+            min-width: 100%;
             height: 255px;
         }
 
@@ -121,7 +123,9 @@
     }
 }
 
-@media (max-width: 480px) {
+//   Version mobile //
+
+@media (max-width: 620px) {
 
     .home {
         display: flex;
@@ -129,7 +133,7 @@
         align-items: center;
 
         .title {
-            width: 335px;
+            width: 100%;
             height: 111px;
             border-radius: 10px;
             margin-top: 0;
@@ -149,6 +153,7 @@
 
         .gallery {
             background-color: white;
+            grid-template-columns: repeat(1, 1fr);
             gap: 20px;
             padding: 0;
             margin-bottom: 20px;
