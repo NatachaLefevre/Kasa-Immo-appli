@@ -27,10 +27,24 @@
 
     .collapse-content {
         background: #f1f1f1;
-        padding: 0.5em;
+        padding: 0.5em 1em 0.5em 1.5em;
         border: none;
-        font-size: 1em;
+        font-size: 1em;           
+        // Pour la transition fermé/ouvert du collapse 
+        overflow: hidden; 
+        transition: transform 0.4s ease;
+        opacity: 0;
     }
+      
+      .collapse-content.open {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      .collapse-content ul {
+        list-style-type: none;
+        padding: 0;
+      }
 }
 
 

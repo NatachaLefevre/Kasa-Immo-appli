@@ -22,18 +22,18 @@ const Slideshow = ({ images }) => {
     return (
         <div className="slideshow">
 
-            <button onClick={prevImage} className='button-slideshow'>
+            {images.length > 1 && <button onClick={prevImage} className='button-slideshow'>
                 <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
+            </button>}
 
             <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} />
 
-            <button onClick={nextImage} className='button-slideshow'>
+            {images.length > 1 && <button onClick={nextImage} className='button-slideshow'>
                 <FontAwesomeIcon icon={faChevronRight} />
-            </button>
-            <div className="image-counter">
+            </button>}
+            {images.length>1&&<div className="image-counter">
                 {currentIndex + 1} / {images.length}
-            </div>
+            </div>}
         </div>
     );
 };
