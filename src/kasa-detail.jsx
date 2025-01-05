@@ -6,7 +6,7 @@ const KasaDetail = () => {
     const { id } = useParams();
     const [logement, setLogement] = useState(null);
     const [loading, setLoading] = useState(true);
-    const navigate = useNavigate(); // Utilisation de useNavigate pour la redirection
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`/logements.json`)
@@ -21,18 +21,19 @@ const KasaDetail = () => {
                 if (trouve) {
                     setLogement(trouve);
                 } else {
-                    navigate("/error"); // Redirection vers la page d'erreur
+                    navigate("/error");
                 }
-                setLoading(false); // Arrête le chargement après la recherche
             })
             .catch(error => {
                 console.error('Cette page ne correspond à aucun logement', error);
-                setLoading(false); // Arrête le chargement en cas d'erreur
+            })
+            .finally(() => {
+                setLoading(false); // Arrête le chargement après la recherche, que ce soit en cas de succès ou d'erreur
             });
     }, [id, navigate]);
 
     if (loading) {
-        return <div>Chargement...</div>; // Affiche "Chargement..." tant que le fetch est en cours
+        return <div>Chargement...</div>;
     }
 
     return (
