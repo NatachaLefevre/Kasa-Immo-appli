@@ -8,8 +8,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './home';
 import About from './about';
-import Header from './header';
-import Footer from './footer';
+import Header from './components/header';
+import Footer from './components/footer';
 import Error from './error'; // Importez le composant Error
 import KasaDetail from './kasa-detail';
 

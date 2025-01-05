@@ -1,7 +1,7 @@
 // Composant pour faire défiler les images des logements
 
 import React, { useState } from 'react';
-import './scss/page-logement/slideshow.scss'
+import '../scss/page-logement/slideshow.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';

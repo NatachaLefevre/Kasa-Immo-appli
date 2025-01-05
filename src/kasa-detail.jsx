@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import PropertyDetailsModal from './PropertyDetailsModal';
+import PropertyDetailsModal from './components/PropertyDetailsModal';
 
 const KasaDetail = () => {
     const { id } = useParams();
@@ -17,9 +17,9 @@ const KasaDetail = () => {
                 return response.json();
             })
             .then(data => {
-                const trouvé = data.find(item => item.id === id);
-                if (trouvé) {
-                    setLogement(trouvé);
+                const trouve = data.find(item => item.id === id);
+                if (trouve) {
+                    setLogement(trouve);
                 } else {
                     navigate("/error"); // Redirection vers la page d'erreur
                 }

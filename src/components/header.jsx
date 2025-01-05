@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './scss/header.scss';
-import logoKasaHeader from './assets/images/logo-kasa-accueil.png';
-import logoKasaHeaderMobile from './assets/images/logo-kasa-accueil-mobile.png';
+import '../scss/header.scss';
+import logoKasaHeader from '../assets/images/logo-kasa-accueil.png';
+import logoKasaHeaderMobile from '../assets/images/logo-kasa-accueil-mobile.png';
 import { useLocation } from 'react-router-dom';
 
 const Header = () => {
