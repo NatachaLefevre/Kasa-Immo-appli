@@ -11,6 +11,8 @@ const About = () => {
 
       <BackgroundSection backgroundImage={backgroundImageAbout} overlayClass='aboutImage' />
 
+      {/* Méthode de Collapse par code en dur. Préférer lien vers un .json avec les infos (+ modulable) */}
+
       <Collapse title="Fiabilité">
         <p>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</p>
       </Collapse>

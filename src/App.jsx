@@ -10,7 +10,7 @@ import Home from './home';
 import About from './about';
 import Header from './components/header';
 import Footer from './components/footer';
-import Error from './error'; // Importez le composant Error
+import Error from './error';
 import KasaDetail from './kasa-detail';
 
 function App() {
