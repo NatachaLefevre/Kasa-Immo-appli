@@ -1,5 +1,5 @@
 import './scss/home.scss'
-import logements from '/logements.json';
+import logements from '..public/logements.json';
 import BackgroundSection from './components/BackgroundSection';
 import Card from './components/Card';
 import backgroundImageTitle from './assets/images/background-image-home.jpg'
