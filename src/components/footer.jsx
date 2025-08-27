@@ -1,4 +1,3 @@
-import React from 'react';
 import '../scss/footer.scss'
 import logoKasaFooter from '../assets/images/logo-kasa-blanc.png';
 

@@ -1,4 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+// Pour désactiver l'avertissement concernant les prop-types qui ne sont plus utilisés depuis React 19
+
+import { useState, useRef, useEffect } from 'react';
 import '../scss/collapse.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';

@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 
 const BackgroundSection = ({ backgroundImage, overlayClass, title }) => (
   <div style={{ backgroundImage: `url(${backgroundImage})` }} className={overlayClass}>
